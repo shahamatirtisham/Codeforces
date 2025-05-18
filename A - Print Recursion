@@ -1,0 +1,18 @@
+
+#include <stdio.h>
+
+void f2(int i, int N){
+    if(i==N){
+        return;
+    }
+    printf("I love Recursion\n");
+    return f2(i+1, N);
+}
+
+int main() {
+    int n;
+    scanf("%d", &n);
+    f2(0, n);
+
+    return 0;
+}
