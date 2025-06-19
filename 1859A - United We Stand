@@ -1,0 +1,60 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+using ll=long long;
+
+#define fast cin.tie(0)->sync_with_stdio(0)
+#define all(v) v.begin(), v.end()
+
+int main()
+{
+    fast;
+
+    ll t;
+    cin>>t;
+    while(t--)
+    {
+        ll n, counter=1;
+        cin>>n;
+
+        ll a[n];
+
+        for(ll i=0; i<n; i++)
+        {
+            cin>>a[i];
+        }
+
+        sort(a, a+n);
+
+
+        for(ll i=0; i<n-1; i++)
+        {
+            if(a[i]==a[i+1]) counter++;
+            else break;
+        }
+
+        if(counter==n) cout<<-1<<"\n";
+
+        else
+        {
+            ll i;
+
+            cout<<counter<<" "<<n-counter<<"\n";
+
+            for(i=0; ; i++)
+            {
+                cout<<a[i]<<" ";
+                if(a[i]!=a[i+1]) break;
+            }
+
+            cout<<"\n";
+
+            for(ll j=i+1; j<n; j++) cout<<a[j]<<" ";
+
+            cout<<"\n";
+        }
+
+    }
+
+    return 0;
+}
